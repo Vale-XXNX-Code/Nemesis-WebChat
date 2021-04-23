@@ -28,7 +28,9 @@ func main() {
 	}
 
 	app := fiber.New()
-	app.Static("/", "index.html")
+	app.Static("/", "public/index.html")
+	app.Static("/signup", "public/signup.html")
+	app.Static("/login", "public/login.html")
 	app.Get("/signup", func (c *fiber.Ctx) error {
 		username := c.FormValue("username")
 		password := c.FormValue("password")
